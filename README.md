@@ -214,3 +214,26 @@ merged_limited_data %>% group_by(DayOfWeek) %>%
 
 ![image](https://github.com/herman12366/Bellabeat/assets/20954773/c48fa6f1-17e9-479f-ac7c-94aae7f8a72d)
 
+Depending on the day users had around 30-50% of days with insufficient sleep of less than 7 hours. Unsurprisingly, Friday is the day when users had the least amount of sleep. Wednesday seemed like the day that the majority of users had a sufficient amount of sleep. We can recommend that Bellabeat focus on the sleeping aspect of the device and remind people of the amount of sleep they are getting. Next, let's analyze the weight data.
+```
+weightLogInfo_merged_clean %>%
+  group_by(Id) %>%
+  summarise(avg_weight=mean(WeightKg),avg_BMI=mean(BMI))
+```
+| ID | avg_weight | avg_BMI | 
+|-----------|--------------------|-------------------|
+| 1503960366   |              52.6  |           22.6     |           
+| 1927972279   |             134.  |            47.5     |
+| 2873212765   |               57   |            21.6     |        
+| 4319703577   |              72.4   |           27.4     |           
+| 4558609924   |              69.6   |            27.2     |           
+| 5577150313   |              90.7   |            28    |          
+| 6962181067 |               61.6   |          24.0    |     
+| 8877689391 |               85.1   |            25.5  |
+
+A recommendation that can be made is to improve the process of collecting weight data, as there were 8 users out of 33 that reported their data. This data can't be taken seriously because of the limited data we have. However, we can see there are 4 of the users that are fit and 1 of them are obese. That means 12.5% of the users were obese which is much lower than the US share of the population of obese people of about 39.6%. As a result, there needs to be more data about the user's weight to be given in order to have this data representative of the general population. 
+
+### Act 
+1. There were a total of 128 users who didn't get 60 minutes of physical activity. The physical activity includes light, fairly active, and very active time. One suggestion can be to remind users that they haven't had an hour of physical activity per day. This can be added with some positive reinforcement whenever a user does achieve the minimum physical activity. There can also be special messages sent on Tuesdays and Thursdays which are days that users miss the minimum physical activity.
+2. There were many users who didn't get enough sleep every night. There should be reminders in the application for users to go to bed or at least remind them that the recommended minimum amount of hours of 7.
+3. Throughout the process of validating and analyzing data there were a lot of missing data. It would be a good recommendation to improve the process of collecting data. When analyzing the weight data there were only 8 users out of the 33. Most of them had a BMI of under 25 which made it inconsistent compared to the US population. With the data provided, there couldn't be a conclusive indication of any trend. There were other data that were limited like the heart rate data, and Sleep data. Making the process of collecting data more efficient, to reach better coverage, and making the process of how sleep and weight data is registered will provide better service to users and also allow analysts to make better connections.  
